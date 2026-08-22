@@ -1,0 +1,61 @@
+name: aromi
+description: "AROMI — AI-powered Anganwadi field-worker assistant"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State management
+  flutter_riverpod: ^2.6.1
+
+  # Networking
+  dio: ^5.7.0
+
+  # Routing
+  go_router: ^14.8.1
+
+  # Secure storage
+  flutter_secure_storage: ^9.2.4
+
+  # Audio recording (pinned to avoid JNI/NDK native build on Android)
+  record: ^5.2.1
+
+  # Text-to-speech
+  flutter_tts: ^4.2.0
+
+  # Permissions
+  permission_handler: ^11.3.1
+
+  # Connectivity
+  connectivity_plus: ^6.1.3
+
+  # Date formatting
+  intl: ^0.19.0
+
+  # Google Fonts
+  google_fonts: ^6.2.1
+
+  # Path provider for temp directory
+  path_provider: ^2.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+# Override record_linux and record_platform_interface to compatible versions
+# that share the same interface (fixes missing startStream / hasPermission mismatch
+# without pulling in record v7 which requires Android NDK JNI compilation)
+dependency_overrides:
+  record_platform_interface: ^2.1.0
+  record_linux: ^2.1.1
+
+flutter:
+  uses-material-design: true
