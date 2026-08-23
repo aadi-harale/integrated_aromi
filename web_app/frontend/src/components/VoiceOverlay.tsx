@@ -96,7 +96,7 @@ export default function VoiceOverlay() {
     <>
       <button 
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 p-4 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 z-50"
+        className="fixed bottom-6 right-6 p-4 bg-primary-navy text-white rounded-full shadow-lg hover:bg-blue-900 z-50"
       >
         <Mic size={24} />
       </button>
@@ -124,7 +124,7 @@ export default function VoiceOverlay() {
                 onPointerDown={startRecording}
                 onPointerUp={stopRecording}
                 onPointerLeave={stopRecording}
-                className={`p-4 rounded-full text-white transition-all ${isRecording ? 'bg-red-500 scale-110 shadow-red-500/50 shadow-lg' : 'bg-indigo-600 hover:bg-indigo-700'}`}
+                className={`p-4 rounded-full text-white transition-all ${isRecording ? 'bg-red-500 scale-110 shadow-red-500/50 shadow-lg' : 'bg-primary-navy hover:bg-blue-900'}`}
               >
                 <Mic size={28} />
               </button>

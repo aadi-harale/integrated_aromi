@@ -123,39 +123,6 @@ export default function Sidebar() {
         ))}
       </div>
 
-      {/* User & Sync Footer */}
-      <div className="p-3.5 border-t border-border-subtle bg-bg-base/70">
-        <div className="flex items-center justify-between mb-2.5 px-1">
-          <span className="text-xs font-semibold text-slate-600">सिंक स्थिति</span>
-          <SyncBadge />
-        </div>
-        <div className="flex items-center justify-between p-2.5 rounded-lg bg-white border border-border-subtle shadow-2xs">
-          <div className="flex items-center gap-2.5 min-w-0">
-            <div className="w-8 h-8 rounded-full bg-primary-navy/10 text-primary-navy flex items-center justify-center font-bold text-xs uppercase shrink-0">
-              {worker?.name ? worker.name.charAt(0) : "A"}
-            </div>
-            <div className="min-w-0 flex-1">
-              <div className="text-xs font-bold text-text-main truncate">
-                {worker?.name || "कार्यकर्ता"}
-              </div>
-              <div className="text-[11px] text-slate-600 font-medium truncate">
-                {worker?.centre_name || "आंगनवाड़ी"}
-              </div>
-            </div>
-          </div>
-          <button
-            onClick={() => {
-              logout();
-              navigate("/login");
-            }}
-            title="लॉगआउट"
-            aria-label="Logout from system"
-            className="p-1.5 text-slate-500 hover:text-danger-red hover:bg-red-50 rounded-lg transition-colors shrink-0 ml-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-danger-red"
-          >
-            <LogOut size={16} />
-          </button>
-        </div>
-      </div>
-    </aside>
+      </aside>
   );
 }
