@@ -60,27 +60,9 @@ export default function PhotoCheck() {
           const blobRes = await fetch(preview);
           const blob = await blobRes.blob();
           uploadFile = new File([blob], "child_photo.jpg", { type: blob.type || "image/jpeg" });
-        } catch {
-          // fallback to demo endpoint
-        }
-      }
-
-      if (uploadFile) {
-        const fd = new FormData();
-        fd.append("photo", uploadFile);
-        fd.append("child_name", childName);
-        fd.append("age_months", ageMonths);
-        const res = await photoAPI.check(fd);
-        setResult(res.data);
-      } else {
-        // Test sample mode using API demo endpoint
-        const res = await photoAPI.checkDemo(childName, testStatus);
-        setResult(res.data);
-      }
-      toast.success("विज़न AI विश्लेषण पूर्ण हुआ");
-    } catch (err) {
+        } catch (err: any) {
       console.error(err);
-      toast.error("विश्लेषण विफल (Analysis failed). Please check OpenRouter configuration.");
+      toast.error(err.response?.data?.detail || "Photo analysis failed. Check OpenRouter API key.");
     } finally {
       setLoading(false);
     }

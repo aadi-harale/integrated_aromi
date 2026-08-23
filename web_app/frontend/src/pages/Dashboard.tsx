@@ -163,7 +163,7 @@ export default function Dashboard() {
       ) : (
         <>
           {/* Executive Overview KPI Cards (4 Metrics) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 lg:grid-cols-2 gap-4 md:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {/* 1. Total Enrolled */}
             <button
               onClick={() => navigate("/children")}
@@ -416,7 +416,7 @@ export default function Dashboard() {
               <span className="text-xs font-semibold text-slate-500">8 मॉड्यूल उपलब्ध</span>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 lg:grid-cols-2 gap-3.5 md:gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3.5 md:gap-4">
               {[
                 {
                   to: "/activity",
